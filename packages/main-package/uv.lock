@@ -1,0 +1,19 @@
+version = 1
+revision = 2
+requires-python = ">=3.12"
+
+[[package]]
+name = "core-package"
+version = "0.1.0"
+source = { directory = "../core-package" }
+
+[[package]]
+name = "main-package"
+version = "0.1.0"
+source = { editable = "." }
+dependencies = [
+    { name = "core-package" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "core-package", directory = "../core-package" }]

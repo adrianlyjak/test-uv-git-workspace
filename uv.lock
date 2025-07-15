@@ -1,0 +1,31 @@
+version = 1
+revision = 2
+requires-python = ">=3.12"
+
+[manifest]
+members = [
+    "core-package",
+    "main-package",
+    "test-uv-git-workspace",
+]
+
+[[package]]
+name = "core-package"
+version = "0.1.0"
+source = { editable = "packages/core-package" }
+
+[[package]]
+name = "main-package"
+version = "0.1.0"
+source = { editable = "packages/main-package" }
+dependencies = [
+    { name = "core-package" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "core-package", editable = "packages/core-package" }]
+
+[[package]]
+name = "test-uv-git-workspace"
+version = "0.1.0"
+source = { virtual = "." }

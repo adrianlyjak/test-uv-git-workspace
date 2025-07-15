@@ -1,0 +1,16 @@
+[project]
+name = "main-package"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Adrian Lyjak", email = "adrianlyjak@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "core-package",
+]
+
+[build-system]
+requires = ["uv_build>=0.7.20,<0.8"]
+build-backend = "uv_build"
